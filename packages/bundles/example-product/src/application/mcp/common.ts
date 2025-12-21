@@ -1,7 +1,7 @@
 import type {
   PromptRegistry,
   ResourceRegistry,
-  SpecRegistry,
+  OperationSpecRegistry,
 } from '@lssm/lib.contracts';
 import { createMcpServer } from '@lssm/lib.contracts';
 import type { PresentationDescriptorV2 } from '@lssm/lib.contracts/presentations.v2';
@@ -39,7 +39,7 @@ function createConsoleLikeLogger(logger: Logger) {
 interface McpHttpHandlerConfig {
   path: string;
   serverName: string;
-  ops: SpecRegistry;
+  ops: OperationSpecRegistry;
   resources: ResourceRegistry;
   prompts: PromptRegistry;
   presentationsV2?: PresentationDescriptorV2[];

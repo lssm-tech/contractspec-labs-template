@@ -6,7 +6,7 @@ import {
   installOp,
   PromptRegistry,
   ResourceRegistry,
-  SpecRegistry,
+  OperationSpecRegistry,
 } from '@lssm/lib.contracts';
 import { defineSchemaModel, ScalarTypeEnum } from '@lssm/lib.schema';
 import z from 'zod';
@@ -135,7 +135,7 @@ function buildDocPrompts() {
 }
 
 function buildDocOps(routes: DocPresentationRoute[]) {
-  const registry = new SpecRegistry();
+  const registry = new OperationSpecRegistry();
 
   const DocSummaryModel = defineSchemaModel({
     name: 'DocSummary',

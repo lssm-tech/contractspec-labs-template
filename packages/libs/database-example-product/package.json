@@ -38,10 +38,10 @@
   },
   "main": "./dist/index.mjs",
   "exports": {
-    ".": "./src/index.ts",
-    "./client": "./src/client.ts",
-    "./enums": "./src/enums.ts",
-    "./models": "./src/models.ts",
+    ".": "./dist/index.mjs",
+    "./client": "./dist/client.mjs",
+    "./enums": "./dist/enums.mjs",
+    "./models": "./dist/models.mjs",
     "./*": "./*"
   },
   "typesVersions": {

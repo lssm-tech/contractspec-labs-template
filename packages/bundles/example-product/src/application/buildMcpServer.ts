@@ -3,16 +3,19 @@ import {
   createMcpServer,
   PromptRegistry,
   ResourceRegistry,
-  SpecRegistry,
+  OperationSpecRegistry,
 } from '@lssm/lib.contracts';
-import {Logger} from '@lssm/lib.logger';
-import {buildPresentationDescriptorsV2, buildPresentationRegistry,} from '@lssm/lib.contracts-example-product';
+import { Logger } from '@lssm/lib.logger';
+import {
+  buildPresentationDescriptorsV2,
+  buildPresentationRegistry,
+} from '@lssm/lib.contracts-example-product';
 // import { DocBySlug } from '@lssm/lib.contracts-content';
-import {createMcpHandler} from 'mcp-handler';
+import { createMcpHandler } from 'mcp-handler';
 
 export function buildMcpServer() {
   const logger = new Logger({ environment: 'development' });
-  const ops = new SpecRegistry(); //.register(BeginSignupSpec);
+  const ops = new OperationSpecRegistry(); //.register(BeginSignupSpec);
   const prompts = new PromptRegistry(); //.register(SignupHelpPrompt);
   const resources = new ResourceRegistry(); //.register(DocBySlug);
   const presentations = buildPresentationRegistry();
