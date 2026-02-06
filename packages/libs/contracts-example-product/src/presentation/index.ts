@@ -5,8 +5,8 @@ import {
   type PresentationDescriptorV2,
   PresentationRegistry,
   type PresentationSpec,
-} from '@lssm/lib.contracts';
-import { ScalarTypeEnum, SchemaModel } from '@lssm/lib.schema';
+} from '@contractspec/lib.contracts';
+import { ScalarTypeEnum, SchemaModel } from '@contractspec/lib.schema';
 
 // Minimal props schema for WebAuthTabs (host may ignore or extend via i18n/branding)
 // const WebAuthTabsProps = new SchemaModel({

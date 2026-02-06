@@ -1,5 +1,5 @@
 {
-  "name": "@lssm/lib.gql-client-example-product",
+  "name": "@contractspec/lib.gql-client-example-product",
   "version": "0.2.0",
   "scripts": {
     "clean": "rm -rf dist",
@@ -17,15 +17,15 @@
   },
   "dependencies": {
     "@graphql-codegen/client-preset": "^5.2.1",
-    "@lssm/lib.schema": "canary"
+    "@contractspec/lib.schema": "1.61.0"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.15.2",
-    "@graphql-codegen/cli": "^6.0.0",
-    "@lssm/tool.typescript": "canary",
-    "@lssm/tool.tsdown": "canary",
-    "@parcel/watcher": "^2.5.1",
-    "tsdown": "^0.17.4",
+    "@graphql-codegen/cli": "^6.1.1",
+    "@contractspec/tool.typescript": "1.61.0",
+    "@contractspec/tool.tsdown": "1.61.0",
+    "@parcel/watcher": "^2.5.6",
+    "tsdown": "^0.18.4",
     "typescript": "^5.9.3"
   },
   "main": "./dist/index.js",

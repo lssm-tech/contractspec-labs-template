@@ -1,4 +1,4 @@
-import { Logger, LogLevel } from '@lssm/lib.logger';
+import { Logger, LogLevel } from '@contractspec/lib.logger';
 
 // Centralized logger configuration for the API
 export const createAppLogger = () =>

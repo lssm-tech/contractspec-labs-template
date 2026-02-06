@@ -1,6 +1,6 @@
 import type {CodegenConfig} from '@graphql-codegen/cli';
 import {GeoJSONResolver} from 'graphql-scalars';
-import {ScalarTypeEnum} from '@lssm/lib.schema';
+import {ScalarTypeEnum} from '@contractspec/lib.schema';
 
 const schemaSources = [
   // Prefer local schema (workspace) to avoid requiring a running server

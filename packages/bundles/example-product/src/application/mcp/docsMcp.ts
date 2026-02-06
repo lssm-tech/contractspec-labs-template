@@ -7,10 +7,10 @@ import {
   PromptRegistry,
   ResourceRegistry,
   OperationSpecRegistry,
-} from '@lssm/lib.contracts';
-import { defineSchemaModel, ScalarTypeEnum } from '@lssm/lib.schema';
+} from '@contractspec/lib.contracts';
+import { defineSchemaModel, ScalarTypeEnum } from '@contractspec/lib.schema';
 import z from 'zod';
-import type { DocPresentationRoute } from '@lssm/lib.contracts/docs';
+import type { DocPresentationRoute } from '@contractspec/lib.contracts/docs';
 import { createMcpNextjsHandler } from './common';
 import { appLogger } from '../../infrastructure/elysia/logger';
 
@@ -89,7 +89,7 @@ function buildDocPrompts() {
     definePrompt({
       meta: {
         name: 'docs.navigator',
-        version: 1,
+        version: '1.0.0',
         title: 'Find relevant ContractSpec docs',
         description: 'Guide agents to pick the right DocBlock by topic or tag.',
         tags: DOC_TAGS,
@@ -182,7 +182,7 @@ function buildDocOps(routes: DocPresentationRoute[]) {
   const searchSpec = defineCommand({
     meta: {
       name: 'docs.search',
-      version: 1,
+      version: '1.0.0',
       stability: 'stable',
       owners: DOC_OWNERS,
       tags: DOC_TAGS,

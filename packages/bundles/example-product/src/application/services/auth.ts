@@ -1,15 +1,15 @@
-import {betterAuth} from 'better-auth';
-import {admin, apiKey, genericOAuth, openAPI, organization,} from 'better-auth/plugins';
-import {prismaAdapter} from 'better-auth/adapters/prisma';
-import {prisma} from '@lssm/lib.database-example-product';
-import {expo} from '@better-auth/expo';
+import { betterAuth } from 'better-auth';
+import { admin, apiKey, genericOAuth, openAPI, organization, } from 'better-auth/plugins';
+import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { prisma } from '@contractspec/lib.database-example-product';
+import { expo } from '@better-auth/expo';
 // import { passkey } from '@better-auth/passkey';
-import {headers} from 'next/headers';
-import {redirect} from 'next/navigation';
-import {Resend} from 'resend';
-import {nextCookies} from 'better-auth/next-js';
-import type {GenericOAuthConfig} from 'better-auth/plugins/generic-oauth';
-import {OrganizationType} from '@lssm/lib.database-example-product/enums';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { Resend } from 'resend';
+import { nextCookies } from 'better-auth/next-js';
+import type { GenericOAuthConfig } from 'better-auth/plugins/generic-oauth';
+import { OrganizationType } from '@contractspec/lib.database-example-product/enums';
 // import { telnyxSMS } from './sms';
 
 const BETTER_AUTH_ADMIN_ROLE = 'admin';
@@ -54,8 +54,8 @@ export const auth = betterAuth({
     provider: 'postgresql',
   }),
   trustedOrigins: [
-    'https://contractspec.lssm.tech',
-    'https://studio.contractspec.lssm.tech',
+    'https://contractspec.io',
+    'https://studio.contractspec.io',
     'http://localhost:3000',
     'http://localhost:3002',
   ],

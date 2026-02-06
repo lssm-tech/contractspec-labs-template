@@ -2,10 +2,10 @@ import type {
   PromptRegistry,
   ResourceRegistry,
   OperationSpecRegistry,
-} from '@lssm/lib.contracts';
-import { createMcpServer } from '@lssm/lib.contracts';
-import type { PresentationDescriptorV2 } from '@lssm/lib.contracts/presentations.v2';
-import { Logger } from '@lssm/lib.logger';
+} from '@contractspec/lib.contracts';
+import { createMcpServer } from '@contractspec/lib.contracts';
+import type { PresentationDescriptorV2 } from '@contractspec/lib.contracts/presentations.v2';
+import { Logger } from '@contractspec/lib.logger';
 import { createMcpHandler } from 'mcp-handler';
 
 function createConsoleLikeLogger(logger: Logger) {

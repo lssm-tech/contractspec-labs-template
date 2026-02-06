@@ -1,4 +1,4 @@
-import {auth} from '@lssm/bundle.example-product/application/services/auth';
+import {auth} from '@contractspec/bundle.example-product/application/services/auth';
 import {toNextJsHandler} from 'better-auth/next-js';
 import {NextResponse} from 'next/server';
 

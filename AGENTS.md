@@ -38,7 +38,7 @@ ContractSpec exposes dedicated MCP servers to keep agents scoped and efficient:
 Implementation notes:
 
 - HTTP routing for these endpoints lives in `packages/apps/api-contractspec/src/handlers/mcp-handler.ts`.
-- The handlers are created from `@lssm/bundle.contractspec-studio/application` (`createDocsMcpHandler`, `createCliMcpHandler`, `createInternalMcpHandler`).
+- The handlers are created from `@contractspec/bundle.contractspec-studio/application` (`createDocsMcpHandler`, `createCliMcpHandler`, `createInternalMcpHandler`).
 - If you add/change an MCP surface, update:
   - `packages/apps/api-contractspec/src/handlers/mcp-handler.ts` (routes)
   - `packages/apps/api-contractspec/src/server.ts` (startup logs / mounted endpoints)

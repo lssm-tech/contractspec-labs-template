@@ -1,11 +1,11 @@
-import {defineCapability, StabilityEnum} from '@lssm/lib.contracts';
+import { defineCapability, StabilityEnum } from '@contractspec/lib.contracts';
 
 const OWNERS = ['platform.example-product'] as const;
 
 export const MessagingCapability = defineCapability({
   meta: {
     key: 'template.messaging.core',
-    version: 1,
+    version: '1.0.0',
     kind: 'api',
     title: 'Template Messaging Core',
     description:
@@ -19,42 +19,42 @@ export const MessagingCapability = defineCapability({
     {
       surface: 'operation',
       name: 'template.messaging.conversation.create',
-      version: 1,
+      version: '1.0.0',
       description:
         'Create a direct or group conversation scoped to a Studio project.',
     },
     {
       surface: 'operation',
       name: 'template.messaging.conversation.list',
-      version: 1,
+      version: '1.0.0',
       description:
         'List conversations with pagination, unread counts, and filters.',
     },
     {
       surface: 'operation',
       name: 'template.messaging.message.send',
-      version: 1,
+      version: '1.0.0',
       description:
         'Send a message with attachments and optimistic delivery state.',
     },
     {
       surface: 'operation',
       name: 'template.messaging.message.read',
-      version: 1,
+      version: '1.0.0',
       description: 'Mark messages as read and update participant cursors.',
     },
     {
       surface: 'event',
       name: 'template.messaging.message.received',
-      version: 1,
+      version: '1.0.0',
       description: 'Emitted when a participant receives a new message.',
     },
     {
       surface: 'event',
       name: 'template.messaging.typing',
-      version: 1,
+      version: '1.0.0',
       description: 'Emitted when a participant is typing in a conversation.',
     },
   ],
-  requires: [{ key: 'studio.project', version: 1 }],
+  requires: [{ key: 'studio.project', version: '1.0.0' }],
 });

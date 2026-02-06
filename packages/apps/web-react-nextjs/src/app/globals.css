@@ -6,10 +6,10 @@
 @source '../../../../bundles/*/src/**/*.{ts,tsx}';
 @source '../../../../modules/*/src/**/*.{ts,tsx}';
 @source '../../../../libs/*/src/**/*.{ts,tsx}';
-@source '../../../../../node_modules/@lssm/lib.*/dist/**/*.{js,jsx}';
-@source '../../../../../node_modules/@lssm/lib.design-system/dist/**/*.{js,jsx}';
-@source '../../../../../node_modules/@lssm/lib.ui-kit/dist/ui/**/*.{js,jsx}';
-@source '../../../../../node_modules/@lssm/lib.ui-kit-web/dist/ui/**/*.{js,jsx}';
+@source '../../../../../node_modules/@contractspec/lib.*/dist/**/*.{js,jsx}';
+@source '../../../../../node_modules/@contractspec/lib.design-system/dist/**/*.{js,jsx}';
+@source '../../../../../node_modules/@contractspec/lib.ui-kit/dist/ui/**/*.{js,jsx}';
+@source '../../../../../node_modules/@contractspec/lib.ui-kit-web/dist/ui/**/*.{js,jsx}';
 
 @custom-variant dark (&:is(.dark *));
 

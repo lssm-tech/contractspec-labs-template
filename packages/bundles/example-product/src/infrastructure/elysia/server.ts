@@ -1,7 +1,7 @@
 import { Elysia } from 'elysia';
 import { cors } from '@elysiajs/cors';
 import { serverTiming } from '@elysiajs/server-timing';
-import { elysiaLogger, Logger } from '@lssm/lib.logger';
+import { elysiaLogger, Logger } from '@contractspec/lib.logger';
 
 export interface ElysiaServerInitOptions {
   logger: Logger;

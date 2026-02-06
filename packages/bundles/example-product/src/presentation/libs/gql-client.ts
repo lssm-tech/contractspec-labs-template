@@ -1,6 +1,6 @@
 import { type ExecutionResult } from 'graphql';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { API_URL_GQL } from '@lssm/lib.gql-client-example-product';
+import { API_URL_GQL } from '@contractspec/lib.gql-client-example-product';
 import type {
   DocumentTypeDecoration,
   ResultOf,

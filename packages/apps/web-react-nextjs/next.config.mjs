@@ -10,7 +10,7 @@ const nextConfig = {
   turbopack: {
     resolveAlias: {
       fs: { browser: 'browserify-fs' },
-      '@lssm/lib.ui-link': 'next/link',
+      '@contractspec/lib.ui-link': 'next/link',
     },
   },
   // Configure webpack as fallback
@@ -49,7 +49,7 @@ const nextConfig = {
     return [
       {
         source: '/api/graphql',
-        destination: 'https://api.contractspec.lssm.tech/graphql',
+        destination: 'https://api.contractspec.io/graphql',
       },
       // LLM guide file (static, no auth)
       {
@@ -67,7 +67,7 @@ const nextConfig = {
       // Subdomain form: llms.<app-domain> → /llms.txt
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'llms.contractspec.lssm.tech' }],
+        has: [{ type: 'host', value: 'llms.contractspec.io' }],
         destination: '/llms.txt',
       },
       {
@@ -83,7 +83,7 @@ const nextConfig = {
   async redirects() {
     // const apiUrl = process.env.API_CONTRACTSPEC_URL || 'https://api.lssm.tech';
     const apiLlmsUrl =
-      process.env.API_CONTRACTSPEC_URL || `https://llms.contractspec.lssm.tech`;
+      process.env.API_CONTRACTSPEC_URL || `https://llms.contractspec.io`;
     return [
       // Ensure local llms guide is served from /public even when generic .md redirects exist.
       {

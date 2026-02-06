@@ -1,13 +1,12 @@
-import path from 'node:path';
-import { defineConfig } from 'prisma/config';
+import { defineConfig, env } from 'prisma/config';
 
 export default defineConfig({
-  schema: path.join('prisma', 'schema'),
+  schema: 'prisma/schema',
   migrations: {
-    path: path.join('prisma', 'migrations'),
+    path: 'prisma/migrations',
     // seed: "bun run prisma/seed.ts",
   },
   datasource: {
-    url: process.env.CONTRACTSPEC_STUDIO_POSTGRES_NON_POOLING!,
+    url: env('CONTRACTSPEC_STUDIO_POSTGRES_PRISMA_URL'),
   },
 });

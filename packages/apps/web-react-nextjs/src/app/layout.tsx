@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'ContractSpec: The Regenerative App Engine',
   description:
     'ContractSpec turns intents into a customized & personalized, auto-evolutive codebase-policy-safe with signed overlays and one-click rollback.',
-  metadataBase: new URL('https://contractspec.lssm.tech'),
+  metadataBase: new URL('https://contractspec.io'),
   keywords: [
     'regenerative app engine',
     'auto-evolutive codebase',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'ContractSpec – The Regenerative App Engine',
     description:
       'ContractSpec turns intents into a customized & personalized, auto-evolutive codebase: policy-safe with signed overlays and one-click rollback.',
-    url: 'https://contractspec.lssm.tech',
+    url: 'https://contractspec.io',
     siteName: 'ContractSpec',
     images: [
       {

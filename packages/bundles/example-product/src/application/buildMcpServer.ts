@@ -4,13 +4,13 @@ import {
   PromptRegistry,
   ResourceRegistry,
   OperationSpecRegistry,
-} from '@lssm/lib.contracts';
-import { Logger } from '@lssm/lib.logger';
+} from '@contractspec/lib.contracts';
+import { Logger } from '@contractspec/lib.logger';
 import {
   buildPresentationDescriptorsV2,
   buildPresentationRegistry,
-} from '@lssm/lib.contracts-example-product';
-// import { DocBySlug } from '@lssm/lib.contracts-content';
+} from '@contractspec/lib.contracts-example-product';
+// import { DocBySlug } from '@contractspec/lib.contracts-content';
 import { createMcpHandler } from 'mcp-handler';
 
 export function buildMcpServer() {

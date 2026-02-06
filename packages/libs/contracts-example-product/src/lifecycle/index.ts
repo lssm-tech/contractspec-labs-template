@@ -1,11 +1,11 @@
-import {defineCapability, StabilityEnum} from '@lssm/lib.contracts';
+import { defineCapability, StabilityEnum } from '@contractspec/lib.contracts';
 
 const OWNERS = ['platform.example-product'] as const;
 
 export const LifecycleAssessmentCapability = defineCapability({
   meta: {
     key: 'studio.lifecycle.assessment',
-    version: 1,
+    version: '1.0.0',
     kind: 'api',
     title: 'Lifecycle Assessment Service',
     description:
@@ -19,21 +19,21 @@ export const LifecycleAssessmentCapability = defineCapability({
     {
       surface: 'operation',
       name: 'studio.lifecycle.assessment.run',
-      version: 1,
+      version: '1.0.0',
       description: 'Run a full lifecycle assessment for an organization.',
     },
     {
       surface: 'operation',
       name: 'studio.lifecycle.recommendations.get',
-      version: 1,
+      version: '1.0.0',
       description: 'Retrieve actionable lifecycle recommendations.',
     },
     {
       surface: 'operation',
       name: 'studio.lifecycle.milestone.track',
-      version: 1,
+      version: '1.0.0',
       description: 'Track milestone progress and ceremonial transitions.',
     },
   ],
-  requires: [{ key: 'studio.project', version: 1 }],
+  requires: [{ key: 'studio.project', version: '1.0.0' }],
 });
