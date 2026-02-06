@@ -1,0 +1,7 @@
+---
+description: Audit the current context against AI governance rules
+---
+Invoke the `ai-auditor` subagent to review the current conversation or open files.
+
+1. Ask the `ai-auditor` to analyze the recent changes or the current plan.
+2. Present the Audit Report to the user.
