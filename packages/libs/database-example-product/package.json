@@ -8,9 +8,11 @@
     "lint:check": "eslint src",
     "publish:pkg": "bun publish --tolerate-republish --ignore-scripts --verbose",
     "publish:pkg:canary": "bun publish:pkg --tag canary",
-    "build": "bun run build:bundle",
-    "build:types": "tsc --noEmit",
-    "build:bundle": "tsdown",
+    "build": "bun run prebuild && bun run build:bundle && bun run build:types",
+    "build:bundle": "contractspec-bun-build transpile",
+    "build:types": "contractspec-bun-build types",
+    "prebuild": "contractspec-bun-build prebuild",
+    "typecheck": "tsc --noEmit",
     "dev": "bun run build:bundle --watch",
     "prisma:import": "prisma validate",
     "prisma:check": "prisma validate",
@@ -19,30 +21,27 @@
     "db:deploy": "prisma migrate deploy",
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
-    "db:seed": "echo \"No seed configured (use prisma/seed.ts if added)\"",
+    "db:seed": "bun prisma/seed.ts",
     "db:reset": "prisma db push --skip-generate --force-reset && bun run db:seed",
     "db:reset:full": "bun run db:generate && bun run db:reset",
     "generate": "bun run db:generate"
   },
   "peerDependencies": {
-    "@prisma/client": "^7.3.0"
+    "@prisma/client": "^7.4.2"
   },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.3.0",
-    "@prisma/client": "^7.3.0"
+    "@prisma/adapter-pg": "^7.4.2",
+    "@prisma/client": "^7.4.2"
   },
   "devDependencies": {
-    "@contractspec/app.cli-database": "1.61.0",
-    "prisma": "^7.3.0",
-    "tsdown": "^0.18.4"
+    "@contractspec/app.cli-database": "catalog:contractspec",
+    "@contractspec/tool.bun": "catalog:contractspec",
+    "dotenv": "catalog:dev",
+    "prisma": "^7.4.1"
   },
   "main": "./dist/index.mjs",
   "exports": {
-    ".": "./dist/index.mjs",
-    "./client": "./dist/client.mjs",
-    "./enums": "./dist/enums.mjs",
-    "./models": "./dist/models.mjs",
-    "./*": "./*"
+    ".": "./src/index.ts"
   },
   "typesVersions": {
     "*": {
@@ -58,15 +57,16 @@
   ],
   "type": "module",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "types": "./dist/index.d.ts",
   "publishConfig": {
     "access": "public",
     "exports": {
-      ".": "./dist/index.mjs",
-      "./client": "./dist/client.mjs",
-      "./enums": "./dist/enums.mjs",
-      "./models": "./dist/models.mjs",
-      "./*": "./*"
+      ".": {
+        "types": "./dist/index.d.ts",
+        "bun": "./dist/index.js",
+        "node": "./dist/node/index.js",
+        "default": "./dist/index.js"
+      }
     }
   }
 }

@@ -1,0 +1,85 @@
+{
+  "name": "@contractspec/lib.design-system",
+  "version": "1.63.0",
+  "description": "Design tokens and theming primitives",
+  "keywords": [
+    "contractspec",
+    "design-system",
+    "tokens",
+    "theming",
+    "ui",
+    "typescript"
+  ],
+  "scripts": {
+    "publish:pkg": "bun publish --tolerate-republish --ignore-scripts --verbose",
+    "publish:pkg:canary": "bun publish:pkg --tag canary",
+    "dev": "contractspec-bun-build dev",
+    "registry:build": "bun run scripts/build-registry.ts",
+    "test": "bun test --pass-with-no-tests",
+    "lint": "bun run lint:fix",
+    "lint:fix": "eslint src --fix",
+    "lint:check": "eslint src",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "tree-shake": true,
+  "dependencies": {
+    "@contractspec/lib.ai-agent": "catalog:contractspec",
+    "@contractspec/lib.contracts-spec": "catalog:contractspec",
+    "@contractspec/lib.contracts-runtime-client-react": "catalog:contractspec",
+    "@contractspec/lib.ui-kit-core": "workspace:*",
+    "@contractspec/lib.ui-kit-web": "workspace:*",
+    "@hookform/resolvers": "5.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.575.0",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "^7.71.2",
+    "shiki": "^4.0.0",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss-animate": "catalog:build",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@contractspec/tool.bun": "workspace:*",
+    "@contractspec/tool.typescript": "catalog:contractspec",
+    "@types/node": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
+    "postcss": "catalog:build",
+    "postcss-load-config": "^6.0.1",
+    "react-native": "^0.81.6",
+    "react-native-css": "^3.0.1",
+    "tailwindcss": "catalog:build",
+    "typescript": "catalog:"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "bun": "./dist/index.js",
+        "browser": "./dist/browser/index.js",
+        "default": "./dist/index.js"
+      }
+    },
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lssm-tech/contractspec.git",
+    "directory": "packages/libs/design-system"
+  },
+  "homepage": "https://contractspec.io"
+}

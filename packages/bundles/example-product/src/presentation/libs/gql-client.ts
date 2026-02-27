@@ -7,7 +7,9 @@ import type {
   VariablesOf,
 } from '@graphql-typed-document-node/core';
 
-export const useGraphQL = <TDocument extends DocumentTypeDecoration<any, any>>(
+type TypedDocument = DocumentTypeDecoration<unknown, Record<string, unknown>>;
+
+export const useGraphQL = <TDocument extends TypedDocument>(
   document: TDocument,
   ...[variables]: VariablesOf<TDocument> extends Record<string, never>
     ? []
@@ -34,7 +36,7 @@ export const useGraphQL = <TDocument extends DocumentTypeDecoration<any, any>>(
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: (queryKey[0] as any).toString(),
+          query: queryKey[0].toString(),
           variables,
         }),
       });
@@ -56,9 +58,7 @@ export const useGraphQL = <TDocument extends DocumentTypeDecoration<any, any>>(
   });
 };
 
-export const useGraphQLMutation = <
-  TDocument extends DocumentTypeDecoration<any, any>,
->(
+export const useGraphQLMutation = <TDocument extends TypedDocument>(
   document: TDocument
 ) => {
   return useMutation({

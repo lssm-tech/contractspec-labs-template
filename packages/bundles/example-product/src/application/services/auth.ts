@@ -1,7 +1,16 @@
 import { betterAuth } from 'better-auth';
-import { admin, apiKey, genericOAuth, openAPI, organization, } from 'better-auth/plugins';
+import {
+  admin,
+  apiKey,
+  genericOAuth,
+  openAPI,
+  organization,
+} from 'better-auth/plugins';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
-import { prisma } from '@contractspec/lib.database-example-product';
+import {
+  OrganizationType,
+  prisma,
+} from '@contractspec/lib.database-example-product';
 import { expo } from '@better-auth/expo';
 // import { passkey } from '@better-auth/passkey';
 import { headers } from 'next/headers';
@@ -9,10 +18,17 @@ import { redirect } from 'next/navigation';
 import { Resend } from 'resend';
 import { nextCookies } from 'better-auth/next-js';
 import type { GenericOAuthConfig } from 'better-auth/plugins/generic-oauth';
-import { OrganizationType } from '@contractspec/lib.database-example-product/enums';
 // import { telnyxSMS } from './sms';
 
 const BETTER_AUTH_ADMIN_ROLE = 'admin';
+
+function requireEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`${name} is required`);
+  }
+  return value;
+}
 
 function parseBetterAuthRoles(role: string | null | undefined): string[] {
   if (!role) return [];
@@ -81,13 +97,15 @@ export const auth = betterAuth({
         from,
         to: user.email,
         subject: 'Réinitialisation de votre mot de passe',
-        html: `<p>Bonjour,</p><p>Pour réinitialiser votre mot de passe, cliquez sur le lien ci-dessous :</p><p><a href="${url}">Réinitialiser mon mot de passe</a></p><p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>`,
+        html: `<p>Bonjour,</p><p>Pour reinitialiser votre mot de passe, cliquez sur le lien ci-dessous :</p><p><a href="${url}">Reinitialiser mon mot de passe</a></p><p>Si vous n'etes pas a l'origine de cette demande, ignorez cet email.</p>`,
       });
     },
     resetPasswordTokenExpiresIn: 60 * 60, // 1h
-    async onPasswordReset() {},
+    async onPasswordReset() {
+      return;
+    },
   },
-  secret: process.env.BETTER_AUTH_SECRET!,
+  secret: requireEnv('BETTER_AUTH_SECRET'),
   plugins: [
     admin(),
     // passkey(),

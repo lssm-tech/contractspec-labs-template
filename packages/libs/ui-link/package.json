@@ -1,0 +1,94 @@
+{
+  "name": "@contractspec/lib.ui-link",
+  "version": "1.64.0",
+  "description": "Cross-platform navigation abstraction for ContractSpec apps",
+  "keywords": [
+    "contractspec",
+    "linking",
+    "navigation",
+    "deep-link",
+    "router",
+    "cross-platform",
+    "ui",
+    "typescript"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "publish:pkg": "bun publish --tolerate-republish --ignore-scripts --verbose",
+    "publish:pkg:canary": "bun publish:pkg --tag canary",
+    "clean": "rm -rf dist",
+    "lint": "bun run lint:fix",
+    "lint:fix": "eslint src --fix",
+    "lint:check": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@contractspec/lib.ui-kit-core": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@contractspec/tool.bun": "workspace:*",
+    "@contractspec/tool.typescript": "catalog:contractspec",
+    "typescript": "catalog:"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./Link": "./src/Link.tsx",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./context": "./src/context.ts",
+    "./types": "./src/types.ts",
+    "./ui/link": "./ui/link.tsx"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "bun": "./dist/index.js",
+        "browser": "./dist/browser/index.js",
+        "default": "./dist/index.js"
+      },
+      "./Link": {
+        "types": "./dist/Link.d.ts",
+        "bun": "./dist/Link.js",
+        "browser": "./dist/browser/Link.js",
+        "default": "./dist/Link.js"
+      },
+      "./ui/link": {
+        "types": "./dist/link.d.ts",
+        "bun": "./dist/link.js",
+        "browser": "./dist/browser/link.js",
+        "default": "./dist/link.js"
+      }
+    },
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lssm-tech/contractspec.git",
+    "directory": "packages/libs/ui-link"
+  },
+  "homepage": "https://contractspec.io"
+}

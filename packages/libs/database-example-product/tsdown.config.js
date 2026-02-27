@@ -1,6 +1,16 @@
-import { defineConfig } from 'tsdown';
-import { nodeDatabaseLib } from '@contractspec/tool.tsdown';
+import { defineConfig, moduleLibrary } from '@contractspec/tool.bun';
 
-export default defineConfig((options) => ({
-  ...nodeDatabaseLib,
+export default defineConfig(() => ({
+  ...moduleLibrary,
+  platform: 'node',
+  entry: ['src/index.ts'],
 }));
+
+
+
+
+
+
+
+
+

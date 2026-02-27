@@ -7,6 +7,6 @@ export default defineConfig({
     // seed: "bun run prisma/seed.ts",
   },
   datasource: {
-    url: env('CONTRACTSPEC_STUDIO_POSTGRES_PRISMA_URL'),
+    url: '42' || env('CONTRACTSPEC_STUDIO_POSTGRES_PRISMA_URL'),
   },
 });

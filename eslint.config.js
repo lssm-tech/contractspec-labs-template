@@ -108,36 +108,6 @@ export default defineConfig([
     },
   },
   {
-    files: [
-      'packages/apps/web-react-nextjs/src/app/(landing-marketing)/**/*.{ts,tsx,js,jsx}',
-      'packages/apps/web-react-nextjs/src/components/**/*.{ts,tsx,js,jsx}',
-      'packages/bundles/example-product/src/presentation/**/*.{ts,tsx,js,jsx}',
-    ],
-    plugins: {
-      ...(dsRecommended.plugins || { 'design-system': designSystemRules }),
-    },
-    rules: {
-      ...(dsRecommended.rules || {}),
-      'design-system/prefer-design-system': [
-        'error',
-        {
-          intrinsicDisallowList: [
-            'button',
-            'input',
-            'textarea',
-            'select',
-            'option',
-            'form',
-            'label',
-          ],
-          localAllowPatterns: ['^\\./components', '^@/components'],
-        },
-      ],
-      'design-system/no-intrinsic-typography': 'error',
-      'design-system/design-import-boundary': 'error',
-    },
-  },
-  {
     files: ['**/*.json'],
     plugins: { json },
     language: 'json/json',

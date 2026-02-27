@@ -1,40 +1,12 @@
 import type {
+  OperationSpecRegistry,
+  PresentationSpec,
   PromptRegistry,
   ResourceRegistry,
-  OperationSpecRegistry,
 } from '@contractspec/lib.contracts';
 import { createMcpServer } from '@contractspec/lib.contracts';
-import type { PresentationDescriptorV2 } from '@contractspec/lib.contracts/presentations.v2';
 import { Logger } from '@contractspec/lib.logger';
 import { createMcpHandler } from 'mcp-handler';
-
-function createConsoleLikeLogger(logger: Logger) {
-  const isDebug = process.env.CONTRACTSPEC_MCP_DEBUG === '1';
-
-  const toMessage = (args: unknown[]) =>
-    args.map((a) => (typeof a === 'string' ? a : JSON.stringify(a))).join(' ');
-
-  return {
-    log: (...args: unknown[]) => {
-      if (!isDebug) return;
-      logger.info(toMessage(args));
-    },
-    info: (...args: unknown[]) => {
-      if (!isDebug) return;
-      logger.info(toMessage(args));
-    },
-    warn: (...args: unknown[]) => {
-      logger.warn(toMessage(args));
-    },
-    error: (...args: unknown[]) => {
-      logger.error(toMessage(args));
-    },
-    debug: (...args: unknown[]) => {
-      if (!isDebug) return;
-      logger.debug(toMessage(args));
-    },
-  };
-}
 
 interface McpHttpHandlerConfig {
   path: string;
@@ -42,7 +14,7 @@ interface McpHttpHandlerConfig {
   ops: OperationSpecRegistry;
   resources: ResourceRegistry;
   prompts: PromptRegistry;
-  presentationsV2?: PresentationDescriptorV2[];
+  presentationsV2?: PresentationSpec[];
   logger: Logger;
 }
 

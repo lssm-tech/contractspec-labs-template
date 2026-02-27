@@ -5,7 +5,7 @@ const OWNERS = ['platform.example-product'] as const;
 export const IntegrationHubCapability = defineCapability({
   meta: {
     key: 'studio.integration-hub',
-    version: '1.0.0',
+    version: 1,
     kind: 'integration',
     title: 'Studio Integration Hub',
     description:
@@ -18,31 +18,31 @@ export const IntegrationHubCapability = defineCapability({
   provides: [
     {
       surface: 'operation',
-      name: 'studio.integration.connect',
-      version: '1.0.0',
+      key: 'studio.integration.connect',
+      version: 1,
       description:
         'Connect a provider with encrypted credentials and run initial verification.',
     },
     {
       surface: 'operation',
-      name: 'studio.integration.disconnect',
-      version: '1.0.0',
+      key: 'studio.integration.disconnect',
+      version: 1,
       description: 'Disconnect or disable an integration safely.',
     },
     {
       surface: 'operation',
-      name: 'studio.integration.sync',
-      version: '1.0.0',
+      key: 'studio.integration.sync',
+      version: 1,
       description: 'Trigger a manual synchronization for an integration.',
     },
   ],
-  requires: [{ key: 'studio.project', version: '1.0.0' }],
+  requires: [{ key: 'studio.project', version: 1 }],
 });
 
 export const KnowledgeHubCapability = defineCapability({
   meta: {
     key: 'studio.knowledge-hub',
-    version: '1.0.0',
+    version: 1,
     kind: 'data',
     title: 'Studio Knowledge Hub',
     description:
@@ -55,19 +55,19 @@ export const KnowledgeHubCapability = defineCapability({
   provides: [
     {
       surface: 'operation',
-      name: 'studio.knowledge.source.index',
-      version: '1.0.0',
+      key: 'studio.knowledge.source.index',
+      version: 1,
       description: 'Index or update a knowledge source with embeddings.',
     },
     {
       surface: 'operation',
-      name: 'studio.knowledge.query',
-      version: '1.0.0',
+      key: 'studio.knowledge.query',
+      version: 1,
       description: 'Perform semantic queries across indexed knowledge sources.',
     },
   ],
   requires: [
-    { key: 'studio.project', version: '1.0.0' },
-    { key: 'studio.integration-hub', version: '1.0.0', optional: true },
+    { key: 'studio.project', version: 1 },
+    { key: 'studio.integration-hub', version: 1, optional: true },
   ],
 });

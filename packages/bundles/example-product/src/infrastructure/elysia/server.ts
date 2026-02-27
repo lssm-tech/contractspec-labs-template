@@ -32,16 +32,16 @@ const createBaseElysiaServer = (opts: ElysiaServerInitOptions) => {
   return app;
 };
 
-export interface ElysiaServerPluginsOptions<
-  T extends CoreElysiaServerRunner,
-> extends ElysiaServerInitOptions {
+export interface ElysiaServerPluginsOptions extends ElysiaServerInitOptions {
   plugins?: CoreElysiaServerRunner[];
   mounts?: CoreElysiaServerRunner[];
 }
 
-export function createContractSpecStudioElysiaServer<
-  T extends CoreElysiaServerRunner,
->({ plugins, mounts, ...baseOptions }: ElysiaServerPluginsOptions<T>) {
+export function createContractSpecStudioElysiaServer({
+  plugins,
+  mounts,
+  ...baseOptions
+}: ElysiaServerPluginsOptions) {
   const app = createBaseElysiaServer(baseOptions);
 
   if (plugins?.length) {

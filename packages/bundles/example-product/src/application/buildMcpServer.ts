@@ -1,16 +1,14 @@
 import {
-  createDefaultTransformEngine,
   createMcpServer,
+  OperationSpecRegistry,
   PromptRegistry,
   ResourceRegistry,
-  OperationSpecRegistry,
 } from '@contractspec/lib.contracts';
 import { Logger } from '@contractspec/lib.logger';
 import {
   buildPresentationDescriptorsV2,
   buildPresentationRegistry,
-} from '@contractspec/lib.contracts-example-product';
-// import { DocBySlug } from '@contractspec/lib.contracts-content';
+} from '@contractspec/lib.contracts-example-product'; // import { DocBySlug } from '@contractspec/lib.contracts-content';
 import { createMcpHandler } from 'mcp-handler';
 
 export function buildMcpServer() {
@@ -19,7 +17,6 @@ export function buildMcpServer() {
   const prompts = new PromptRegistry(); //.register(SignupHelpPrompt);
   const resources = new ResourceRegistry(); //.register(DocBySlug);
   const presentations = buildPresentationRegistry();
-  const engine = createDefaultTransformEngine();
   const presentationsV2 = buildPresentationDescriptorsV2();
 
   const handler = createMcpHandler(

@@ -1,12 +1,8 @@
 import {
-  createFeatureModule,
   FeatureRegistry,
-  OwnersEnum,
-  type PresentationDescriptorV2,
-  PresentationRegistry,
   type PresentationSpec,
+  PresentationRegistry,
 } from '@contractspec/lib.contracts';
-import { ScalarTypeEnum, SchemaModel } from '@contractspec/lib.schema';
 
 // Minimal props schema for WebAuthTabs (host may ignore or extend via i18n/branding)
 // const WebAuthTabsProps = new SchemaModel({
@@ -26,8 +22,8 @@ export function buildPresentationRegistry() {
   return reg;
 }
 
-export function buildPresentationDescriptorsV2(): PresentationDescriptorV2[] {
-  const list: PresentationDescriptorV2[] = [];
+export function buildPresentationDescriptorsV2(): PresentationSpec[] {
+  const list: PresentationSpec[] = [];
   return list;
 }
 

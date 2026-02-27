@@ -2,15 +2,78 @@
   "name": "lssm",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "packages/tools/*",
-    "packages/libs/*",
-    "packages/integrations/*",
-    "packages/modules/*",
-    "packages/examples/*",
-    "packages/bundles/*",
-    "packages/apps/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/tools/*",
+      "packages/libs/*",
+      "packages/integrations/*",
+      "packages/modules/*",
+      "packages/examples/*",
+      "packages/bundles/*",
+      "packages/apps/*"
+    ],
+    "catalog": {
+      "react": "19.2.4",
+      "react-dom": "19.2.4",
+      "next": "16.1.6",
+      "zod": "^4.3.5",
+      "typescript": "^5.9.3"
+    },
+    "catalogs": {
+      "contractspec": {
+        "contractspec": "latest",
+        "@contractspec/eslint-plugin-design-system": "latest",
+        "@contractspec/tool.typescript": "3.0.0",
+        "@contractspec/tool.bun": "workspace:*",
+        "@contractspec/tool.tsdown": "3.0.0",
+        "@contractspec/lib.contracts-runtime-client-react": "3.0.0",
+        "@contractspec/lib.contracts-spec": "3.0.0",
+        "@contractspec/lib.schema": "3.0.0",
+        "@contractspec/lib.ai-agent": "3.0.0",
+        "@contractspec/lib.ai-providers": "3.0.0",
+        "@contractspec/lib.evolution": "3.0.0",
+        "@contractspec/lib.lifecycle": "3.0.0",
+        "@contractspec/lib.logger": "3.0.0",
+        "@contractspec/lib.graphql-prisma": "3.0.0",
+        "@contractspec/lib.source-extractors": "2.0.0",
+        "@contractspec/lib.product-intent-utils": "3.0.0",
+        "@contractspec/lib.video-gen": "2.0.0",
+        "@contractspec/integration.providers-impls": "3.0.0",
+        "@contractspec/app.cli-database": "3.0.0"
+      },
+      "build": {
+        "tsdown": "^0.20.3",
+        "turbo": "^2.8.9",
+        "@changesets/cli": "^2.29.8",
+        "postcss": "^8.5.6",
+        "tailwindcss": "4.2.1",
+        "@tailwindcss/postcss": "^4.2.1",
+        "@tailwindcss/vite": "^4.2.1",
+        "@tailwindcss/typography": "^0.5.16",
+        "tw-animate-css": "1.4.0",
+        "tailwindcss-animate": "^1.0.7",
+        "vite": "^7.3.1",
+        "@vitejs/plugin-react": "^5.1.4",
+        "rimraf": "^6.1.2"
+      },
+      "dev": {
+        "eslint": "^9.39.2",
+        "prettier": "3.8.1",
+        "@types/node": "^25.3.2",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "@types/bun": "^1.3.9",
+        "dotenv": "^17.3.1"
+      },
+      "testing": {
+        "jest": "^30.2.0",
+        "@types/jest": "^30.0.0",
+        "storybook": "^10.2.13",
+        "playwright": "^1.58.2",
+        "@playwright/test": "^1.58.2"
+      }
+    }
+  },
   "scripts": {
     "rulesync:all": "bunx rulesync generate --targets \"*\" --features \"*\"",
     "rulesync:opencode": "bunx rulesync generate --targets opencode --features \"*\"",
@@ -38,34 +101,35 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
+    "@contractspec/eslint-plugin-design-system": "3.0.0",
+    "@contractspec/lib.contracts": "2.0.0",
     "@eslint/css": "^0.14.1",
-    "@eslint/js": "^9.39.2",
-    "@eslint/json": "^1.0.0",
-    "contractspec": "1.61.0",
-    "@contractspec/eslint-plugin-design-system": "1.61.0",
-    "@types/bun": "^1.3.8",
+    "@eslint/js": "^9.39.3",
+    "@eslint/json": "^1.0.1",
+    "@types/bun": "^1.3.9",
+    "contractspec": "3.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-i18next": "^6.1.3",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.3.0",
-    "knip": "^5.83.1",
+    "knip": "^5.85.0",
     "memoirist": "^0.4.0",
     "next": "16.1.6",
     "patch-package": "^8.0.1",
     "prettier": "3.8.1",
     "prettier-plugin-prisma": "^5.0.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "turbo-ignore": "^2.8.3",
-    "typescript-eslint": "^8.54.0"
+    "turbo-ignore": "^2.8.12",
+    "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "turbo": "^2.8.3",
+    "turbo": "^2.8.12",
     "semver": "^7.7.3"
   },
   "config": {
